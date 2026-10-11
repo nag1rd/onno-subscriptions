@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/subscriptions
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+
+onno:
+  auth:
+    users:
+      - username: admin
+        password: ${APP_ADMIN_PASSWORD:admin}
+        roles: [ADMIN]
+    session:
+      remember-me:
+        allow-ephemeral-key: true
+
+  ui:
+    locale: ru
+
+app:
+  time-zone: Europe/Moscow
+
+org:
+  jobrunr:
+    background-job-server:
+      enabled: true
+      worker-count: 2
+    dashboard:
+      enabled: false
